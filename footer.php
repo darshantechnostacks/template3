@@ -59,7 +59,7 @@
                                 <p class="mb2"><?= str_replace("NAME OF THE FIRM", $firm_name, $testimonial_desc) ?></p>
                             <?php
                             }
-                            $testimonial_photo = isset($testimonial->photo) ? $testimonial->photo : 'img/dammy-user-icon.png';
+                            $testimonial_photo = isset($testimonial->photo) ? PHOTO_URL.$testimonial->photo : 'img/dammy-user-icon.png';
                             ?>
                             <p class="mb1"><span><img src="<?= $testimonial_photo ?>" /></span> <span>-<?= isset($testimonial->name) ? $testimonial->name : '' ?></span></p>
                             <a href="#">View All Testimonials</a>
