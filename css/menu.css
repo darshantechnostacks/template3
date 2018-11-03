@@ -1,0 +1,37 @@
+
+@media screen and (max-width:767px){
+    .navbar-collapse {
+        border:0;
+        box-shadow:none;
+        position:absolute;
+        width:100%;
+        z-index:999;
+        top:70px;
+    }
+.header ul.navbar-nav li{width:100%;border-top:1px solid #f8198d; position:relative;}
+.header ul.navbar-nav li:hover{background:#363636;}
+.header ul.navbar-nav ul li,.header li:hover > ul > li{height:auto}
+.header ul.navbar-nav li a,.header ul.navbar-nav ul li a{width:100%;border-bottom:0; display:block;  padding:10px;font-size:14px; background:#000; color:#fff;}
+.header ul.navbar-nav > li{float:none}
+.header ul.navbar-nav ul li a{padding-left:25px}
+.header ul.navbar-nav ul li{background:#333!important;}
+.header ul.navbar-nav ul li:hover{background:#363636!important}
+.header ul.navbar-nav ul ul li a{padding-left:35px}
+.header ul.navbar-nav ul li:hover > a,.header ul.navbar-nav ul li.active > a{color:#fafafa}
+.header ul.navbar-nav ul,.header ul.navbar-nav ul ul{position:relative;left:0;width:100%;margin:0;text-align:left}
+.header ul.navbar-nav > li.has-sub > a:after,.header ul.navbar-nav > li.has-sub > a:before,.header ul.navbar-nav ul > li.has-sub > a:after,.header ul.navbar-nav ul > li.has-sub > a:before{display:none}
+.header .submenu-button{position:absolute; z-index:99;right:0;top:0;display:block;border-left:1px solid #f8198d;height:40px;width:46px;cursor:pointer;}
+.header .submenu-button.submenu-opened{background:#f8198d}
+.header ul.navbar-nav ul .submenu-button{height:40px;width:34px}
+.header .submenu-button:after{position:absolute;top:22px;right:19px;width:8px;height:2px;display:block;background:#ddd;content:''}
+.header ul.navbar-nav ul .submenu-button:after{top:19px;right:13px}
+.header .submenu-button.submenu-opened:after{background:#fff}
+.header .submenu-button:before{position:absolute;top:19px;right:22px;display:block;width:2px;height:8px;background:#ddd;content:''}
+.header ul.navbar-nav ul .submenu-button:before{top:16px;right:16px}
+.header .submenu-button.submenu-opened:before{display:none}
+.header ul.navbar-nav ul ul li.active a{border-left:none}
+.header ul.navbar-nav > li.has-sub > ul > li.active > a,.header ul.navbar-nav ul > li.has-sub > ul > li.active > a{border-top:none}
+    .header ul.navbar-nav li.active .submenu-button.submenu-opened {
+        background:#3ec7f9;
+    }
+}
