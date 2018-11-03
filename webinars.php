@@ -110,7 +110,6 @@ $banner = isset($final_webinars['banner_image']) ? COVER_URL . $final_webinars['
     <div class="container">
         <div class="row">
             <div class="col-md-offset-1 col-md-10">
-                <ul class="listing-section">
                     <?php
                     if (!empty($final_webinars)) {
                         if (count($final_webinars) > 0 && !empty($final_webinars)) {
@@ -133,21 +132,20 @@ $banner = isset($final_webinars['banner_image']) ? COVER_URL . $final_webinars['
                                         $play_video = $webinars['url'];
                                     }
                                     ?>
-                                    <li>
-                                        <div class="img-block">
+                                    <div class="col-md-3">
+                                        <div class="thumbnail">
                                             <a href="" class="video-btn" data-toggle="modal" data-src="<?= $play_video ?>"
                                                data-target="#myModal">
                                                 <img src="<?= $imag_src ?>" class="img-responsive">
                                             </a>
                                         </div>
-                                    </li>
+                                    </div>
                                     <?php
                                 }
                             }
                         }
                     }
                     ?>
-                </ul>
             </div>
         </div>
     </div>
