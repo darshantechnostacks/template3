@@ -92,7 +92,7 @@ if (!empty($banners) && $banners->code == 200) {
             <div class="col-md-offset-3 col-md-6">
                 <h1 class="title mb2 text-center"><span>Services</span></h1>
                 <p class="mb2 sub-title text-center">
-                    <?= isset($settings->home_page_service_content) ? $settings->home_page_service_content : '' ?>
+                    <?= strip_tags(substr(isset($settings->home_page_service_content) ? $settings->home_page_service_content : '', 0, 60)) ?>
                 </p>
             </div>
         </div>
@@ -105,32 +105,36 @@ if (!empty($banners) && $banners->code == 200) {
                 <div class="col-md-4 col-sm-6 mb2">
                     <div class="inner-box clearfix">
                         <?php
+                        $service_page_slug = isset($service->page_slug) ? $service->page_slug : '';
                         if ($service->edit_status == 0) {
+                            $image = isset($service->service->icon) ? ICON_URL.$service->service->icon : '';
+                            $content = isset($service->service->page_content) ? $service->service->page_content : '';
+                            $name = isset($service->service->name) ? $service->service->name : '';
+                        } else {
+                            $image = isset($service->icon) ? ICON_URL.$service->icon : '';
+                            $content = isset($service->page_content) ? $service->page_content : '';
+                            $name = isset($service->name) ? $service->name : '';
+                        }
                             ?>
-                            <div class="icon-block">
-                                <i class=" icon mb-3"><img src="<?= ICON_URL . $service->service->icon ?>"
-                                                           class="img-responsive"/></i>
+                        <div class="icon-block">
+                            <i class=" icon mb-3">
+                                <?php
+                                if(!empty($image)){
+                                    echo "<img src='$image' class='img-responsive'/>";
+                                } else {
+                                    echo "<img src='img/banner-bg.png' class='img-responsive'/>";
+                                }
+                                ?>
+
+                            </i>
+                        </div>
+                        <div class="content">
+                            <div class="title-block">
+                                <h2 class="title"><?= $name ?></h2>
                             </div>
-                            <div class="content">
-                                <div class="title-block">
-                                    <h2 class="title"><?= $service->service->name ?></h2>
-                                </div>
-                                <p><?= $service->service->page_content ?></p>
-                                <a href="services.php?slug=<?= $service->page_slug ?>" class="btn-link">Read More >></a>
-                            </div>
-                        <?php } else { ?>
-                            <div class="icon-block">
-                                <i class=" icon mb-3"><img src="<?= ICON_URL . $service->icon ?>"
-                                                           class="img-responsive"/></i>
-                            </div>
-                            <div class="content">
-                                <div class="title-block">
-                                    <h2 class="title"><?= $service->name ?></h2>
-                                </div>
-                                <p><?= $service->page_content ?></p>
-                                <a href="services.php?slug=<?= $service->page_slug ?>" class="btn-link">Read More >></a>
-                            </div>
-                        <?php } ?>
+                            <p><?= $content ?></p>
+                            <a href="services.php?slug=<?= $service_page_slug ?>" class="btn-link">Read More >></a>
+                        </div>
                     </div>
                 </div>
             <?php } ?>
