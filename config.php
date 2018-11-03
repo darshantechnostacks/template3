@@ -54,7 +54,7 @@ $curl = new CURL();
 
 $udata['id'] = 1;
 
-$set_no = 1;
+$set_no = 3;
 /* * **************** User Data get ************ */
 $udata['websiteId'] = WEBSITE_ID;
 $result = $curl->send_api($udata, 'Users/GetUserByWebsiteId');

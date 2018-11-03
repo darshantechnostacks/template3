@@ -20,7 +20,7 @@ $addresses = isset($addresses) ? $addresses : '';
                             $full_address = $address1.$address2."<br/>".$city.$state.$country.$zip_code;
                             ?>
                             <div class="col-md-6">
-                                <h5 class="font-17 font-medium txt-white"><?= isset($address->Cities->county) ? $address->Cities->county : '' ?> <small class="font-regular txt-white"></small></h5>
+                                <h5 class="font-17 font-medium txt-white"><?= isset($country) ? $country : '' ?> <small class="font-regular txt-white"></small></h5>
                                 <ul class="address-info">
                                     <li>
                                         <i class="icon-location"></i>
