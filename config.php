@@ -1,9 +1,9 @@
 <?php
     //Local
-//    define('API_URL','http://192.168.0.158/cpa-cake/');
-//    define('EMAIL','test20@yopmail.com');
-//    define('API_TOKEN','1943869614813663c39abfaaf2f02e8cddf4e459');
-//    define('WEBSITE_ID','1be7c36b3c2561e800d9cf43cdc22ef1');
+    define('API_URL','http://192.168.0.158/cpa-cake/');
+    define('EMAIL','test20@yopmail.com');
+    define('API_TOKEN','1943869614813663c39abfaaf2f02e8cddf4e459');
+    define('WEBSITE_ID','1be7c36b3c2561e800d9cf43cdc22ef1');
 
     //Live
 //    define('API_URL','http://18.221.49.101/cpacake/');
@@ -11,10 +11,10 @@
 //    define('API_TOKEN','efe13fc665f5f82351d7db3a7202238facefbf66');
 //    define('WEBSITE_ID','d4c132469b11d98e74461b0f48c0af04');
 
-define('API_URL','http://18.221.49.101/cpacake/');
-define('EMAIL','dhaval@yopmail.com');
-define('API_TOKEN','ccb79ed3b41e6b3ac73a3420fc6a952b173a01d5');
-define('WEBSITE_ID','931e53a63a665475929569e260a647c4');
+//define('API_URL','http://18.221.49.101/cpacake/');
+//define('EMAIL','dhaval@yopmail.com');
+//define('API_TOKEN','ccb79ed3b41e6b3ac73a3420fc6a952b173a01d5');
+//define('WEBSITE_ID','931e53a63a665475929569e260a647c4');
 
     define('BANNER_URL', API_URL.'geturl/uploads/banner/');
     define('LOGO_URL', API_URL.'geturl/uploads/logo/');

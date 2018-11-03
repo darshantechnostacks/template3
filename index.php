@@ -92,7 +92,7 @@ if (!empty($banners) && $banners->code == 200) {
             <div class="col-md-offset-3 col-md-6">
                 <h1 class="title mb2 text-center"><span>Services</span></h1>
                 <p class="mb2 sub-title text-center">
-                    <?= $settings->home_page_service_content ?>
+                    <?= isset($settings->home_page_service_content) ? $settings->home_page_service_content : '' ?>
                 </p>
             </div>
         </div>
@@ -148,7 +148,7 @@ if (!empty($banners) && $banners->code == 200) {
         <div class="container text-center">
             <h1 class="counter-title">Some Interesting Facts About Us</h1>
             <h2 class="counter-sub-title">
-                <?= $settings->home_page_counter_content ?>
+                <?= isset($settings->home_page_counter_content) ? $settings->home_page_counter_content : '' ?>
             </h2>
         </div>
     </div>
@@ -204,7 +204,7 @@ if (!empty($banners) && $banners->code == 200) {
         </div>
         <div class="row mb2">
             <div class="col-md-12 text-center">
-                <a href="#" class="btn btn-radius btn-shadow btn-pink">More about it !</a>
+                <a href="about.php" class="btn btn-radius btn-shadow btn-pink">More about it !</a>
             </div>
         </div>
     </div>
@@ -290,7 +290,7 @@ if (!empty($banners) && $banners->code == 200) {
                 <div class="mb3">
                     <a href="#" class="btn btn-pink btn-radius text-uppercase">Schedule a Demo</a>
                 </div>
-                <p><?= $settings->home_page_schedule_content ?></p>
+                <p><?= isset($settings->home_page_schedule_content) ? $settings->home_page_schedule_content : '' ?></p>
             </div>
             <div class="col-md-4">
                 <div id="datepicker1"></div>
@@ -328,7 +328,7 @@ if (!empty($banners) && $banners->code == 200) {
     <div class="container mb5">
         <h1 class="title text-center mb3">News</h1>
         <p class="text-center">
-            <?= $settings->home_page_news_content; ?>
+            <?= isset($settings->home_page_news_content) ? $settings->home_page_news_content : '' ?>
         </p>
     </div>
 
@@ -346,8 +346,8 @@ if (!empty($banners) && $banners->code == 200) {
                                         <i class="icon-eye-2"></i>
                                     </div>
                                     <div class="content">
-                                        <h3 class="title"><?= $new->title ?></h3>
-                                        <p><?= strip_tags(substr($new->content, 0, 60)) ?></p>
+                                        <h3 class="title"><?= isset($new->title) ? $new->title : '' ?></h3>
+                                        <p><?= strip_tags(substr(isset($new->content) ? $new->content : '', 0, 60)) ?></p>
                                     </div>
                                 </li>
                                 <?php
@@ -392,7 +392,7 @@ if (!empty($banners) && $banners->code == 200) {
 <div class="contact-section contact-section join-footer">
     <div class="container">
         <h1 class="title text-center mb3">Contact</h1>
-        <p><?= $settings->home_page_contact_content ?></p>
+        <p><?= isset($settings->home_page_contact_content) ? $settings->home_page_contact_content : '' ?></p>
         <div class="contact-block">
             <div class="contact-info-outer row clearfix">
                 <div class="col-md-4 col-sm-4 col-xs-6 col-sm-offset-4 col-md-offset-4">
@@ -413,7 +413,7 @@ if (!empty($banners) && $banners->code == 200) {
                     <form class="contact_1" method="post" id="frmcontactus">
                         <input type="text" class="txt-box" name="username" id="contact_form_username"
                                placeholder="Name"/>
-                        <input type="text" class="txt-box" name="email" id="contact_form_email"
+                        <input type="email" class="txt-box" name="email" id="contact_form_email"
                                placeholder="Email Address"/>
                         <textarea class="txt-box mb1" id="contact_form_message" name="message" rows="5"
                                   placeholder="Message"></textarea>

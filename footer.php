@@ -17,7 +17,7 @@
                                 <?php
                                 if (!empty($about_data) && $about_data->code == 200) {
                                     $aboutus = $about_data->Uaboutus;
-                                    echo strip_tags(substr($aboutus->description,0,450)).'.... <a href="aboutus.php">Read more</a>';
+                                    echo strip_tags(substr(isset($aboutus->description) ? $aboutus->description : '',0,450)).'.... <a href="about.php">Read more</a>';
                                 }
                                 ?>
                             </p>
@@ -30,7 +30,7 @@
                                     foreach ($links as $link => $class){
                                         if(!empty($settings->$link)){
                                             ?>
-                                            <li><a href="<?= $settings->$link ?>"><i class="<?= $class ?>"></i></a></li>
+                                            <li><a href="<?= isset($settings->$link) ? $settings->$link : '' ?>"><i class="<?= isset($class) ? $class : '' ?>"></i></a></li>
                                     <?php
                                         }
                                     }
@@ -53,12 +53,15 @@
                                 echo '<div class="vimeo-article"><iframe src="https://player.vimeo.com/video/'.$vimeoUrl.'?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=ffffff" width="'.$width.'" height="'.$height.'" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>';
                             }
                             } else {
+                                $firm_name = isset($homePages->firm_name) ? $homePages->firm_name : '';
+                                $testimonial_desc = isset($testimonial->description) ? $testimonial->description : '';
                                 ?>
-                                <p class="mb2"><?= str_replace("NAME OF THE FIRM", $homePages->firm_name, $testimonial->description) ?></p>
+                                <p class="mb2"><?= str_replace("NAME OF THE FIRM", $firm_name, $testimonial_desc) ?></p>
                             <?php
                             }
+                            $testimonial_photo = isset($testimonial->photo) ? $testimonial->photo : 'img/dammy-user-icon.png';
                             ?>
-                            <p class="mb1"><span><img src="<?= PHOTO_URL.$testimonial->photo ?>" /></span> <span>-<?= $testimonial->name ?></span></p>
+                            <p class="mb1"><span><img src="<?= $testimonial_photo ?>" /></span> <span>-<?= isset($testimonial->name) ? $testimonial->name : '' ?></span></p>
                             <a href="#">View All Testimonials</a>
                         </div>
                         <div class="col-md-4 col-sm-12 mb2">
