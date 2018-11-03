@@ -108,11 +108,11 @@ if (!empty($banners) && $banners->code == 200) {
                         $service_page_slug = isset($service->page_slug) ? $service->page_slug : '';
                         if ($service->edit_status == 0) {
                             $image = isset($service->service->icon) ? ICON_URL.$service->service->icon : '';
-                            $content = isset($service->service->page_content) ? $service->service->page_content : '';
+                            $content = isset($service->service->page_content) ? strip_tags(substr($service->service->page_content,0,100)) : '';
                             $name = isset($service->service->name) ? $service->service->name : '';
                         } else {
                             $image = isset($service->icon) ? ICON_URL.$service->icon : '';
-                            $content = isset($service->page_content) ? $service->page_content : '';
+                            $content = isset($service->page_content) ? strip_tags(substr($service->page_content,0,60)).'...' : '';
                             $name = isset($service->name) ? $service->name : '';
                         }
                             ?>
