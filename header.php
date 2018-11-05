@@ -63,7 +63,7 @@ function buildMenu($menus, $parentid = 0)
 }
 $url = $_SERVER['REQUEST_URI'];
 $select2Css = '';
-if (strpos($url, 'blogs.php') !== false) {
+if (strpos($url, 'track_refund.php') !== false) {
     $select2Css = "<link href='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css' rel='stylesheet' />";
 }
 ?>
@@ -83,6 +83,7 @@ if (strpos($url, 'blogs.php') !== false) {
     <link href="css/slick.css" rel="stylesheet">
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link href="css/custom.css" rel="stylesheet">
+    <?= isset($select2Css) ? $select2Css : '' ?>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>

@@ -108,6 +108,14 @@
 <script src="js/menu.js"></script>
 <script src="js/slick.js"></script>
 <script src="js/jquery-ui.js"></script>
+<?php
+$url = $_SERVER['REQUEST_URI'];
+$select2Css = '';
+if (strpos($url, 'track_refund.php') !== false) {
+    $select2Css = "<script src='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js'></script>";
+}
+?>
+<?= isset($select2Css) ? $select2Css : '' ?>
 
 <script>
     $(function () {
