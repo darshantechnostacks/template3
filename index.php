@@ -64,7 +64,7 @@ if (!empty($banners) && $banners->code == 200) {
     </ul>
     <ul class="top-contact-info">
         <li><i class="icon-mobile"></i><?= isset($homePages->firm_phone) ? $homePages->firm_phone : "" ?></li>
-        <li><i class="icon-mobile"></i> <a
+        <li><i class="icon-email"></i> <a
                     href="mailtto:<?= isset($homePages->firm_email) ? $homePages->firm_email : "" ?>"><?= isset($homePages->firm_email) ? $homePages->firm_email : "" ?></a>
         </li>
     </ul>
@@ -77,7 +77,7 @@ if (!empty($banners) && $banners->code == 200) {
                 <h1 class="title"><span>About Us</span></h1>
                 <p class="sub-title mb2">Introduction of
                     <span><?php echo isset($homePages->firm_name) ? $homePages->firm_name : ""; ?></span></p>
-                <p class="mb2"><?= isset($homePages->about_your_company) ? substr($homePages->about_your_company, 0, 250) . '...' : "" ?></p>
+                <p class="mb2"><?= isset($homePages->about_your_company) ? substr($homePages->about_your_company, 0, 500) . '...' : "" ?></p>
                 <a href="aboutus.php" class="btn btn-radius btn-pink">Read More</a>
             </div>
         </div>
@@ -101,7 +101,7 @@ if (!empty($banners) && $banners->code == 200) {
             $i = 0;
             foreach ($services as $key => $service) {
                 ?>
-                <div class="col-md-4 col-sm-6 mb2">
+                <div class="col-md-3 col-sm-6 mb2">
                     <div class="inner-box clearfix">
                         <?php
                         $service_page_slug = isset($service->page_slug) ? $service->page_slug : '';

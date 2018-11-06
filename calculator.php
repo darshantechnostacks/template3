@@ -17,7 +17,7 @@ require_once('header.php');
         </div>
         <ul class="top-contact-info">
             <li><i class="icon-mobile"></i><?= isset($homePages->firm_phone) ? $homePages->firm_phone : "" ?></li>
-            <li><i class="icon-mobile"></i> <a
+            <li><i class="icon-email"></i> <a
                         href="mailtto:<?= isset($homePages->firm_email) ? $homePages->firm_email : "" ?>"><?= isset($homePages->firm_email) ? $homePages->firm_email : "" ?></a>
             </li>
         </ul>
