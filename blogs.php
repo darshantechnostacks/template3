@@ -118,9 +118,9 @@ $singleArr = array();
                                                     $blog_content = isset($value->content) ? $value->content : '';
                                                     $image = isset($value->featured_image) ? FEATURE_PHOTO . $value->featured_image : '';
                                                     if (!empty($image)) {
-                                                        echo "<img src='$image' class='img-responsive'/>";
+                                                        echo "<img src='$image' class='img-responsive' style='height: 154px; min-width: 200px;'/>";
                                                     } else {
-                                                        echo "<img src='img/blog-img.png' class='img-responsive'/>";
+                                                        echo "<img src='img/blog-img.png' class='img-responsive' style='height: 154px; min-width: 200px;'/>";
                                                     }
                                                     ?>
                                                 </a>
