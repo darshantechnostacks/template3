@@ -108,6 +108,7 @@
 <script src="js/menu.js"></script>
 <script src="js/slick.js"></script>
 <script src="js/jquery-ui.js"></script>
+<script type='text/javascript' src='js/jquery.rateyo.min.js'></script>
 <?php
 $url = $_SERVER['REQUEST_URI'];
 $select2Css = '';
