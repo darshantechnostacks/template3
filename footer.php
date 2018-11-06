@@ -17,7 +17,7 @@
                                 <?php
                                 if (!empty($about_data) && $about_data->code == 200) {
                                     $aboutus = $about_data->Uaboutus;
-                                    echo strip_tags(substr(isset($aboutus->description) ? $aboutus->description : '',0,450)).'.... <a href="about.php">Read more</a>';
+                                    echo strip_tags(substr(isset($aboutus->description) ? $aboutus->description : '',0,450)). '.... <a href="aboutus.php">Read more</a>';
                                 }
                                 ?>
                             </p>

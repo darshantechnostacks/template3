@@ -11,6 +11,11 @@
 font-family: 'Ubuntu', sans-serif;
 font-family: 'Spinnaker', sans-serif;*/
 
+.tax-head{
+    background-color: #F889C1;
+    color: white;
+}
+
 .loadingLoader {
     display: block;
     left: 0;

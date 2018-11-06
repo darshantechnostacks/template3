@@ -79,7 +79,7 @@ if (!empty($banners) && $banners->code == 200) {
                 <p class="sub-title mb2">Introduction of
                     <span><?php echo isset($homePages->firm_name) ? $homePages->firm_name : ""; ?></span></p>
                 <p class="mb2"><?= isset($homePages->about_your_company) ? substr($homePages->about_your_company, 0, 250) . '...' : "" ?></p>
-                <a href="about.php" class="btn btn-radius btn-pink">Read More</a>
+                <a href="aboutus.php" class="btn btn-radius btn-pink">Read More</a>
             </div>
         </div>
     </div>
@@ -208,7 +208,7 @@ if (!empty($banners) && $banners->code == 200) {
         </div>
         <div class="row mb2">
             <div class="col-md-12 text-center">
-                <a href="about.php" class="btn btn-radius btn-shadow btn-pink">More about it !</a>
+                <a href="aboutus.php" class="btn btn-radius btn-shadow btn-pink">More about it !</a>
             </div>
         </div>
     </div>
