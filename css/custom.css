@@ -152,6 +152,9 @@ h3 {
 
 .img-responsive {
     display: inline-block;
+}
+.img-responsive-webinar
+{
     min-height: 150px;
 }
 

@@ -136,7 +136,7 @@ $banner = isset($final_webinars['banner_image']) ? COVER_URL . $final_webinars['
                                         <div class="thumbnail">
                                             <a href="" class="video-btn" data-toggle="modal" data-src="<?= $play_video ?>"
                                                data-target="#myModal">
-                                                <img src="<?= $imag_src ?>" class="img-responsive">
+                                                <img src="<?= $imag_src ?>" class="img-responsive img-responsive-webinar">
                                             </a>
                                         </div>
                                     </div>
