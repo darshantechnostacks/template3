@@ -22,6 +22,7 @@ define('WEBSITE_ID','931e53a63a665475929569e260a647c4');
     define('FEATURE_PHOTO', API_URL.'geturl/uploads/feature_photo/');
     define('PHOTO_URL', API_URL.'geturl/uploads/photo/');
     define('COVER_URL', API_URL.'geturl/uploads/cover/');
+    define('FILE_URL', API_URL.'geturl/uploads/file/');
 
 
 

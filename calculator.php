@@ -27,9 +27,11 @@ require_once('header.php');
             <div class="our-team animated fadeInUp">
                     <div class="row">
                     <?php
-                        if(isset($_GET['slug']))
+                        if(isset($_GET['slug']) && file_exists('calculator/'.$_GET['slug'].'.php'))
                         {
                             require_once('calculator/'.$_GET['slug'].'.php');
+                        } else {
+                            echo "<h3>No Record Found</h3>";
                         }
                     ?>
                 </div>

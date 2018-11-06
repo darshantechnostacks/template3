@@ -5,12 +5,11 @@ $banners = $curl->send_api($datas, 'Ubanners/getActiveBanner');
 $banner = array();
 if (!empty($banners) && $banners->code == 200) {
     $banner = $banners->Ubanners;
-//    p($banner);
-    $labels = array('no_of_clients' => 'images/ic_no_of_client.png',
-        'no_of_employees' => 'images/ic_no_of_emp.png',
-        'special_projects' => 'images/ic_client_review.png',
-        'serving_community_since' => 'images/ic_projects.png',
-        'client_reviews' => 'images/ic-community.png');
+    $labels = array('no_of_clients' => 'img/ic_no_of_client.png',
+        'no_of_employees' => 'img/ic_no_of_emp.png',
+        'special_projects' => 'img/ic_client_review.png',
+        'serving_community_since' => 'img/ic_projects.png',
+        'client_reviews' => 'img/ic-community.png');
 }
 ?>
 <div class="top-slider-outer">
@@ -141,7 +140,7 @@ if (!empty($banners) && $banners->code == 200) {
         </div>
         <div class="row mb2">
             <div class="col-md-12 text-center">
-                <a href="#" class="btn btn-radius btn-pink">See More</a>
+                <a href="services.php" class="btn btn-radius btn-pink">See More</a>
             </div>
         </div>
     </div>
@@ -151,14 +150,14 @@ if (!empty($banners) && $banners->code == 200) {
     <div class="counter-info-title-block mb3">
         <div class="container text-center">
             <h1 class="counter-title">Some Interesting Facts About Us</h1>
-            <h2 class="counter-sub-title">
-                <?= isset($settings->home_page_counter_content) ? $settings->home_page_counter_content : '' ?>
-            </h2>
+            <h4 class="counter-sub-title">
+                <?= isset($settings->home_page_counter_content) ? strip_tags($settings->home_page_counter_content) : '' ?>
+            </h4>
         </div>
     </div>
     <div class="container">
         <div class="row mb3">
-
+            <div class="col-md-1"></div>
             <?php
             $last = count($labels) - 1;
             $i = 0;
@@ -166,14 +165,14 @@ if (!empty($banners) && $banners->code == 200) {
                 if (!is_numeric($homePages->$name)) {
                     $values = json_decode($homePages->$name);
                     ?>
-                    <div class="col-md-3 col-sm-6 mb2 text-center">
+                    <div class="col-md-2 col-sm-6 mb2 text-center">
                         <div class="clearfix block <?php if ($last != $i) {
                             echo "text-center";
                         } else {
                             echo "last";
                         } ?>">
                             <div class="icon-block">
-                                <img src="img/user-icon.png" class=""/>
+                                <img src="<?= $img ?>" class=""/>
                             </div>
                             <div class="content">
                                 <h3><?= $values->value ?></h3>
@@ -184,7 +183,7 @@ if (!empty($banners) && $banners->code == 200) {
                     <?php
                 } else {
                     ?>
-                    <div class="col-md-3 col-sm-6 mb2 text-center">
+                    <div class="col-md-2 col-sm-6 mb2 text-center">
                         <div class="clearfix block <?php if ($last != $i) {
                             echo "text-center";
                         } else {
@@ -226,9 +225,9 @@ if (!empty($banners) && $banners->code == 200) {
                             <div class="img-block text-center">
                                 <?php if (!empty($blog->featured_image)) { ?>
                                     <img src="<?= FEATURE_PHOTO . $blog->featured_image ?>"
-                                         class="img-responsive full-width"/>
+                                         class="img-responsive full-width" style="height: 200px" />
                                 <?php } else { ?>
-                                    <img src="<?= FEATURE_PHOTO . 'default.png' ?>" class="img-responsive full-width"/>
+                                    <img src="<?= FEATURE_PHOTO . 'default.png' ?>" class="img-responsive full-width" style="height: 200px" />
                                 <?php } ?>
                             </div>
                             <div class="content">
@@ -243,43 +242,10 @@ if (!empty($banners) && $banners->code == 200) {
                 <?php }
             }
             ?>
-
-            <div class="col-md-4 col-sm-6 mb2">
-                <div class="blog-inner">
-                    <div class="img-block text-center">
-                        <img src="img/img01.png" class="img-responsive full-width"/>
-                    </div>
-                    <div class="content">
-                        <h3>Blog Title</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. consectetur adipisicing
-                            elit. </p>
-                        <!--<a href="#">Read More</a>-->
-                    </div>
-                    <div class="hover-title">
-                        <a href="#">VIEW BLOG</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 mb2">
-                <div class="blog-inner">
-                    <div class="img-block text-center">
-                        <img src="img/img01.png" class="img-responsive full-width"/>
-                    </div>
-                    <div class="content">
-                        <h3>Blog Title</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. consectetur adipisicing
-                            elit. </p>
-                        <!--<a href="#">Read More</a>-->
-                    </div>
-                    <div class="hover-title">
-                        <a href="#">VIEW BLOG</a>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="row mb3">
             <div class="col-md-12 text-center">
-                <a href="#" class="btn btn-radius btn-shadow btn-pink">See More</a>
+                <a href="blogs.php" class="btn btn-radius btn-shadow btn-pink">See More</a>
             </div>
         </div>
     </div>
@@ -291,9 +257,6 @@ if (!empty($banners) && $banners->code == 200) {
             <div class="col-md-8 mb2">
                 <h1 class="title">SCHEDULE A DEMO</h1>
                 <h3>INSTRUCT HOW TO WORK</h3>
-                <div class="mb3">
-                    <a href="#" class="btn btn-pink btn-radius text-uppercase">Schedule a Demo</a>
-                </div>
                 <p><?= isset($settings->home_page_schedule_content) ? $settings->home_page_schedule_content : '' ?></p>
             </div>
             <div class="col-md-4">

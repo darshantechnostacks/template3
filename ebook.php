@@ -92,7 +92,7 @@ if (count($Ebook) > 0) {
                                     <a href="#"
                                        class="listing-title"><?= isset($single_book['title']) ? $single_book['title'] : '' ?></a>
                                     <p><?= isset($single_book['description']) ? $single_book['description'] : '' ?></p>
-                                    <a href="#" class="btn btn-pink font-13 font-medium btn-small">MORE DETAILS</a>
+                                    <a href="ebook_detail.php?id=<?= $single_book['id'] ?>" class="btn btn-pink font-13 font-medium btn-small">MORE DETAILS</a>
                                 </div>
                             </li>
                             <?php

@@ -62,7 +62,7 @@
                             $testimonial_photo = isset($testimonial->photo) ? PHOTO_URL.$testimonial->photo : 'img/dammy-user-icon.png';
                             ?>
                             <p class="mb1"><span><img src="<?= $testimonial_photo ?>" /></span> <span>-<?= isset($testimonial->name) ? $testimonial->name : '' ?></span></p>
-                            <a href="#">View All Testimonials</a>
+                            <a href="testimonials.php">View All Testimonials</a>
                         </div>
                         <div class="col-md-4 col-sm-12 mb2">
                             <h4>Contact Info</h4>
