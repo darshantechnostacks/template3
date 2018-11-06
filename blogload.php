@@ -38,9 +38,9 @@ foreach ($blogs as $key => $value) {
             $blog_content = isset($value->content) ? $value->content : '';
             $image = isset($value->featured_image) ? FEATURE_PHOTO . $value->featured_image : '';
             if (!empty($image)) {
-                $messg .= "<img src='$image' class='img-responsive'/>";
+                $messg .= "<img src='$image' class='img-responsive' style='height: 154px; min-width: 200px;'/>";
             } else {
-                $messg .= "<img src='img/blog-img.png' class='img-responsive'/>";
+                $messg .= "<img src='img/blog-img.png' class='img-responsive' style='height: 154px; min-width: 200px;'/>";
             }
 
         $messg .= "</a>";

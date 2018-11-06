@@ -11,10 +11,15 @@
 //    define('API_TOKEN','efe13fc665f5f82351d7db3a7202238facefbf66');
 //    define('WEBSITE_ID','d4c132469b11d98e74461b0f48c0af04');
 //
+//define('API_URL','http://18.221.49.101/cpacake/');
+//define('EMAIL','dhaval@yopmail.com');
+//define('API_TOKEN','ccb79ed3b41e6b3ac73a3420fc6a952b173a01d5');
+//define('WEBSITE_ID','931e53a63a665475929569e260a647c4');
+
 define('API_URL','http://18.221.49.101/cpacake/');
-define('EMAIL','dhaval@yopmail.com');
-define('API_TOKEN','ccb79ed3b41e6b3ac73a3420fc6a952b173a01d5');
-define('WEBSITE_ID','931e53a63a665475929569e260a647c4');
+define('EMAIL','demo2@yopmail.com');
+define('API_TOKEN','25dc8d9287e4bb46f425c0ff0a5dbf14c3cd0b59');
+define('WEBSITE_ID','2b1c70f850e4da7cd86267195ada6177');
 
     define('BANNER_URL', API_URL.'geturl/uploads/banner/');
     define('LOGO_URL', API_URL.'geturl/uploads/logo/');

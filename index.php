@@ -190,7 +190,7 @@ if (!empty($banners) && $banners->code == 200) {
                             echo "last";
                         } ?>">
                             <div class="icon-block">
-                                <img src="img/user-icon.png" class=""/>
+                                <img src="<?= $img ?>" class=""/>
                             </div>
                             <div class="content">
                                 <h3><?= $homePages->$name ?></h3>
