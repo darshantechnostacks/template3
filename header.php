@@ -84,7 +84,6 @@ if (strpos($url, 'track_refund.php') !== false) {
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel='stylesheet' href='css/jquery.rateyo.min.css' type='text/css' media='all' />
     <link href="css/custom.css" rel="stylesheet">
-    <link href="css/owl.carousel.css" rel="stylesheet" />
     <?= isset($select2Css) ? $select2Css : '' ?>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>

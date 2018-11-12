@@ -106,19 +106,19 @@ if (!empty($banners) && $banners->code == 200) {
                         <?php
                         $service_page_slug = isset($service->page_slug) ? $service->page_slug : '';
                         if ($service->edit_status == 0) {
-                            $image = isset($service->service->icon) ? ICON_URL . $service->service->icon : '';
-                            $content = isset($service->service->page_content) ? strip_tags(substr($service->service->page_content, 0, 100)) : '';
+                            $image = isset($service->service->icon) ? ICON_URL.$service->service->icon : '';
+                            $content = isset($service->service->page_content) ? strip_tags(substr($service->service->page_content,0,100)) : '';
                             $name = isset($service->service->name) ? $service->service->name : '';
                         } else {
-                            $image = isset($service->icon) ? ICON_URL . $service->icon : '';
-                            $content = isset($service->page_content) ? strip_tags(substr($service->page_content, 0, 60)) . '...' : '';
+                            $image = isset($service->icon) ? ICON_URL.$service->icon : '';
+                            $content = isset($service->page_content) ? strip_tags(substr($service->page_content,0,60)).'...' : '';
                             $name = isset($service->name) ? $service->name : '';
                         }
-                        ?>
+                            ?>
                         <div class="icon-block">
                             <i class=" icon mb-3">
                                 <?php
-                                if (!empty($image)) {
+                                if(!empty($image)){
                                     echo "<img src='$image' class='img-responsive'/>";
                                 } else {
                                     echo "<img src='img/banner-bg.png' class='img-responsive'/>";
@@ -225,10 +225,9 @@ if (!empty($banners) && $banners->code == 200) {
                             <div class="img-block text-center">
                                 <?php if (!empty($blog->featured_image)) { ?>
                                     <img src="<?= FEATURE_PHOTO . $blog->featured_image ?>"
-                                         class="img-responsive full-width" style="height: 200px"/>
+                                         class="img-responsive full-width" style="height: 200px" />
                                 <?php } else { ?>
-                                    <img src="<?= FEATURE_PHOTO . 'default.png' ?>" class="img-responsive full-width"
-                                         style="height: 200px"/>
+                                    <img src="<?= FEATURE_PHOTO . 'default.png' ?>" class="img-responsive full-width" style="height: 200px" />
                                 <?php } ?>
                             </div>
                             <div class="content">
@@ -273,19 +272,19 @@ if (!empty($banners) && $banners->code == 200) {
             <div class="col-md-12">
                 <h1 class="title mb3">Membership and Certification</h1>
                 <div class=" clearfix text-center">
-                    <div id="clients-carousel" class="owl-carousel">
+                    <ul class="membership-slider">
                         <?php
                         if (!empty($alogos->Alogos)) {
                             foreach ($alogos->Alogos as $logos) {
                                 ?>
-                                <div class="item">
+                                <li>
                                     <img src="<?= LOGO_URL . $logos->logo ?>"/>
-                                </div>
+                                </li>
                                 <?php
                             }
                         }
                         ?>
-                    </div>
+                    </ul>
                 </div>
             </div>
         </div>
