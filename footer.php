@@ -109,6 +109,7 @@
 <script src="js/slick.js"></script>
 <script src="js/jquery-ui.js"></script>
 <script type='text/javascript' src='js/jquery.rateyo.min.js'></script>
+<script src="js/owl.carousel.min.js"></script>
 <?php
 $url = $_SERVER['REQUEST_URI'];
 $select2Css = '';
@@ -229,6 +230,25 @@ if (strpos($url, 'track_refund.php') !== false) {
         });
     });
 
+    jQuery('#clients-carousel').owlCarousel({
+        loop: true,
+        items: 4,
+        margin: 30,
+        autoplay: true,
+        autoplayTimeout: 8500,
+        smartSpeed: 450,
+        responsive: {
+            0: {
+                items: 2
+            },
+            768: {
+                items: 3
+            },
+            1170: {
+                items: 5
+            }
+        }
+    });
     //contact us
     jQuery("#frmcontactus").submit(function (event) {
         event.preventDefault();
