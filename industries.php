@@ -83,11 +83,11 @@ if (isset($bannerSetting->isedit) && $bannerSetting->isedit === 1) {
                     if($value->isedit == 1){
                         $title = isset($value->title) ? $value->title : '';
                         $page_content = isset($value->page_content) ? $value->page_content : '';
-                        $image = isset($value->featured_image) ? FEATURE_PHOTO.$value->featured_image : '';
+                        $image = !empty($value->featured_image) ? FEATURE_PHOTO.$value->featured_image : '';
                     } else {
                         $title = isset($value->Industries->title) ? $value->Industries->title : '';
                         $page_content = isset($value->Industries->industriecontents[$set_no-1]->contents) ? $value->Industries->industriecontents[$set_no-1]->contents : '';
-                        $image = isset($value->Industries->featured_image) ? FEATURE_PHOTO.$value->Industries->featured_image : '';
+                        $image = !empty($value->Industries->featured_image) ? FEATURE_PHOTO.$value->Industries->featured_image : '';
                     }
                     ?>
                     <div class="col-md-4 col-sm-6 mb2">

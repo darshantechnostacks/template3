@@ -84,48 +84,51 @@ $image = FEATURE_PHOTO . 'testimonials_default.png';
                 <div class="d-flex margin_bottom_small testimonial-container xs-flex-column">
                     <div class="clearfix">
                         <div class="row">
-                            <div class="col-sm-4">
-                                <div class="align-items-center d-flex flex-shrink-0">
-                                    <?php $avtar = !empty($value->photo) && isset($value->photo) ? $value->photo : "default.png"; ?>
-                                    <img class="person-pic"
-                                         src="<?php echo API_URL . 'geturl/uploads/photo/' . $avtar; ?>" alt=""
-                                         style="width:200px;height: auto;"/>
-                                </div>
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="d-flex flex-column flex-grow-1 padding_bottom_mini padding_left_mini padding_right_mini padding_top_mini">
-                                    <div class="feedback justify-content-center d-flex flex-column flex-grow-1">
-                                        <blockquote class="margin_bottom_small margin_top_small"><?php
-                                            if ($value->type == 0) {
-                                                echo $details = str_replace("{company_name}", $homePages->firm_name, ($value->description));
-                                            } else {
-                                                if (strpos($value->video, 'youtube') !== false) { ?>
-                                                    <iframe src="<?php echo $value->video; ?>" frameborder="0"
-                                                            allow="autoplay; encrypted-media"
-                                                            allowfullscreen=""
-                                                            style="width:350px;min-height: 250px;height: 250px;"></iframe>
-                                                <?php } else {
-                                                    $vimeoUrl = (int)substr(parse_url($value->video, PHP_URL_PATH), 1);
-                                                    ?>
-                                                    <iframe src="https://player.vimeo.com/video/<?php echo $vimeoUrl; ?>??autoplay=1"
-                                                            frameborder="0"
-                                                            allowfullscreen=""
-                                                            style="width:350px;min-height: 250px;height: 250px;"></iframe>
-                                                    <?php
-                                                }
-                                            }
-                                            ?>
-                                        </blockquote>
-                                        <div class="center-block user-rating"
-                                             data-rate="<?php echo $value->ratings; ?>"></div>
+                            <div class="col-sm-12">
+                                <div class="col-sm-4">
+                                    <div class="align-items-center d-flex flex-shrink-0">
+                                        <?php $avtar = !empty($value->photo) && isset($value->photo) ? $value->photo : "default.png"; ?>
+                                        <img class="person-pic"
+                                             src="<?php echo API_URL . 'geturl/uploads/photo/' . $avtar; ?>" alt=""
+                                             style="width:200px;height: auto;"/>
                                     </div>
-                                    <div class="flex-shrink-0 person-name text-center text-muted"><i class="">
-                                            <strong>
-                                                <?php echo $value->name; ?>,</strong> <?php echo $value->designation; ?>
-                                        </i>
-                                        <p>
-                                            <i><?php echo $value->firm_name . ' , ' . $value->Cities->city . ' , ' . $value->States->state_name; ?></i>
-                                        </p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="d-flex flex-column flex-grow-1 padding_bottom_mini padding_left_mini padding_right_mini padding_top_mini">
+                                        <div class="feedback justify-content-center d-flex flex-column flex-grow-1">
+                                            <blockquote class="margin_bottom_small margin_top_small"><?php
+                                                if ($value->type == 0) {
+                                                    echo $details = str_replace("{company_name}", $homePages->firm_name, ($value->description));
+                                                } else {
+                                                    if (strpos($value->video, 'youtube') !== false) { ?>
+                                                        <iframe src="<?php echo $value->video; ?>" frameborder="0"
+                                                                allow="autoplay; encrypted-media"
+                                                                allowfullscreen=""
+                                                                style="width:350px;min-height: 250px;height: 250px;"></iframe>
+                                                    <?php } else {
+                                                        $vimeoUrl = (int)substr(parse_url($value->video, PHP_URL_PATH), 1);
+                                                        ?>
+                                                        <iframe src="https://player.vimeo.com/video/<?php echo $vimeoUrl; ?>??autoplay=1"
+                                                                frameborder="0"
+                                                                allowfullscreen=""
+                                                                style="width:350px;min-height: 250px;height: 250px;"></iframe>
+                                                        <?php
+                                                    }
+                                                }
+                                                ?>
+                                            </blockquote>
+                                            <div class="center-block user-rating"
+                                                 data-rate="<?php echo $value->ratings; ?>"></div>
+                                        </div>
+                                        <div class="flex-shrink-0 person-name text-center text-muted"><i class="">
+                                                <strong>
+                                                    <?php echo $value->name; ?>
+                                                    ,</strong> <?php echo $value->designation; ?>
+                                            </i>
+                                            <p>
+                                                <i><?php echo $value->firm_name . ' , ' . $value->Cities->city . ' , ' . $value->States->state_name; ?></i>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
