@@ -240,7 +240,7 @@ if (!empty($news_data) && $news_data->code == 200) {
 /* * ***End News******** */
 
 	/*****Get Team*********/
-	$our_team_data = array();
+	/*$our_team_data = array();
 	$our_team_data['umenu_id'] = 1;
 	$our_team_data['websiteId'] = WEBSITE_ID;
 
@@ -252,7 +252,7 @@ if (!empty($news_data) && $news_data->code == 200) {
 		if ($our_team_datas->code == 200) {
 			$our_teams = $our_team_datas->Uteams;
 		}
-	}
+	}*/
 	/*****End Team*********/
         
 function p($data) {
