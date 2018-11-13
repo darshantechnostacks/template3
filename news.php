@@ -195,7 +195,7 @@ $singleArr = array();
                 var tot = +x + +y;
 
                 if (data.message == '' || y < 3) {
-                    $('.loadmorebtndiv').hide();
+                    $('#loadnews').hide();
                 }
 
                 jQuery('#totblog').val(tot);
@@ -230,7 +230,7 @@ $singleArr = array();
                 var tot = +x + +y;
 
                 if (data.message == '' || y < 3) {
-                    $('.loadmorebtndiv').hide();
+                    $('#loadnews').hide();
                 }
 
                 jQuery('#totblog').val(tot);
