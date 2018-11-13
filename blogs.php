@@ -151,11 +151,12 @@ $singleArr = array();
                                 <h3 class="text-center">No Data Found.</h3>
                             <?php } ?>
                         </ul>
+                        <button type="submit" name="contact_submit" id="loadblog"
+                                class="btn btn-pink align-content-center"
+                                data-text="Click Here">Load More
+                        </button>
                     </div>
-                    <button type="submit" name="contact_submit" id="loadblog"
-                            class="btn btn-pink align-content-center"
-                            data-text="Click Here">Load More
-                    </button>
+
                 </div>
 
             </div>
