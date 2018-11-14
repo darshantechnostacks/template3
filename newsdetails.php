@@ -31,7 +31,7 @@ if ($result->code == 200) {
                             <div class="blog-inner-border">
                                 <div class="mb1 img-block">
                                     <?php
-                                    $image = isset($value->featured_image) ? FEATURE_PHOTO . $news->featured_image : '';
+                                    $image = isset($news->featured_image) ? FEATURE_PHOTO . $news->featured_image : '';
                                     if (!empty($image)) {
                                         echo "<img src='$image' class='img-responsive'/>";
                                     } else {

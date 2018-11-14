@@ -24,6 +24,7 @@ if (!empty($banners) && $banners->code == 200) {
                     <div class="block row">
                         <div class="title col-sm-12">
                             <p class="mb2"> <?= $banner_value->banner_title ?></p>
+                            <p><?= !empty($banner_value->banner_desc) ? $banner_value->banner_desc : '' ?></p>
                             <?php
                             if (!empty($banner_value->button_link)) { ?>
                                 <a href="<?= $banner_value->button_link ?>"
@@ -235,7 +236,7 @@ if (!empty($banners) && $banners->code == 200) {
                                 <p><?php echo substr($blog->content, 0, 170) . '...'; ?></p>
                             </div>
                             <div class="hover-title">
-                                <a href="#">VIEW BLOG</a>
+                                <a href="blogdetails.php?id=<?= $blog->id ?>">VIEW BLOG</a>
                             </div>
                         </div>
                     </div>
