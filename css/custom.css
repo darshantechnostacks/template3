@@ -526,6 +526,9 @@ h5.normal {
 /* Blog page style END */
 
 .grid-link {
+    display: block;
+    border-radius: 3px;
+    height: 100%;
     text-decoration: none;
 }
 
@@ -533,7 +536,43 @@ h5.normal {
     box-shadow: 0 0 0 2px #ce0315;
     text-decoration: none;
     color: inherit;
-    border-radius: 3px;
+}
+
+.grid-link.link-overlay {
+    position: relative;
+}
+
+.grid-link.link-overlay::after {
+    content:'';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all .25s ease;
+    background-color: transparent;
+}
+
+.grid-link.link-overlay:hover::after {
+    background-color: rgba(0,0,0,0.6);
+}
+.grid-link.link-overlay:hover::before {
+    content:attr(data-overlay);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;    
+    font-size: 20px;
+    height: 40px;
+    width: 100px;
+    color: #ffffff;
+    background-color: #da2713;
+    margin: auto;
+    z-index: 1;
+    text-align: center;
+    border-radius: 4px;
+    padding: 7px;
 }
 
 /* Border utilities */
