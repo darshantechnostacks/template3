@@ -42,13 +42,15 @@ $guideName = !empty($resultGuideCategory->name) ? $resultGuideCategory->name : '
                 <div class="d-flex flex-wrap row">
                     <?php
                     foreach ($subCategory as $category) {
+                        $name = !empty($category->name) ? $category->name : '';
+                        $description = !empty($category->description) ? $category->description : '';
                         ?>
                         <div class="col-md-6 col-sm-4 col-xs-12 margin_bottom_mini">
                             <a href="tax-guide-inner.php?id=<?= $category->id ?>"
                                class="grid-link border border-danger link-overlay margin_bottom_mini padding_left_mini padding_right_mini padding_bottom_mini padding_top_mini"
                                data-overlay="View">
-                                <h4 class="normal"><?= !empty($category->name) ? $category->name : '' ?></h4>
-                                <p><?= !empty($category->description) ? $category->description : '' ?></p>
+                                <h4 class="normal"><?= $name ?></h4>
+                                <p><?= substr($description, 0, 100) . ' ...' ?></p>
                             </a>
                         </div>
                         <?php
