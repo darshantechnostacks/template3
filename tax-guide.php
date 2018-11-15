@@ -18,7 +18,7 @@ $guideDescription = !empty($settingGuide->description) ? $settingGuide->descript
 ?>
     <header id="loadHeader" class="top_panel_wrap bg_tint_light" data-active="Tax Guide"></header>
     <div class="page_top_wrap page_top_title page_top_breadcrumbs"
-         style="background:url(<?= API_URL ?>geturl/uploads/icon/<?= $guidBanner ?>) no-repeat 59% 49%;max-height: 250px;background-size: cover;">
+         style="background:url(<?= API_URL ?>geturl/uploads/feature_photo/<?= $guidBanner ?>) no-repeat 59% 49%;max-height: 250px;background-size: cover;">
         <div class="content_wrap">
             <div class="breadcrumbs">
                 <a class="breadcrumbs_item home" href="index.php">Home</a>
