@@ -4,7 +4,7 @@ $settingGuideCategory = $curl->send_api(array(),'guideCategory/GetSetting');
 $settingGuide = !empty($settingGuideCategory->GuideCategory) ? $settingGuideCategory->GuideCategory : '';
 
 $request = array(
-    'conditions' => array('(GuideCategory.pid = 0 or GuideCategory.pid is NULL', 'GuideCategory.status = 1)'),
+    'conditions' => array('(GuideCategory.pid = 0 or GuideCategory.pid is NULL)', '(GuideCategory.status = 1)'),
     'contain' => array(),
     'fields' => array(),
     'select' => array(),
@@ -30,6 +30,7 @@ $guideDescription = !empty($settingGuide->description) ? $settingGuide->descript
     </div>
     <div class="container padding_top_mini">
         <p><?= $guideDescription ?></p>
+        <br>
         <div class="d-flex flex-wrap row">
             <?php
             foreach ($resultGuideCategory as $category){

@@ -50,6 +50,7 @@
         </div>
         <div class="page_content_wrap margin_bottom_small padding_bottom_small padding_left_small padding_right_small padding_top_small">
             <?php echo $description; ?>
+            <br>
             <div class="row d-flex flex-wrap">
                 <?php if(count($client_forms) > 0){ foreach($clientforms as $client_form){?>
                 <div class="col-sm-6 col-xs-12 margin_bottom_small">
