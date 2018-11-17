@@ -1,9 +1,9 @@
 <?php
-define('API_URL','http://192.168.0.158/cpa-cake/');
-define('EMAIL','test20@yopmail.com');
-define('API_TOKEN','1943869614813663c39abfaaf2f02e8cddf4e459');
-define('WEBSITE_ID','1be7c36b3c2561e800d9cf43cdc22ef1');
-   
+define('API_URL','');
+define('EMAIL','');
+define('API_TOKEN','');
+define('WEBSITE_ID','');
+
 class CURL {
 
     function send_api($fields, $action) {
@@ -27,6 +27,10 @@ class CURL {
         return $returnResult;
     }
 }
+
+$webId = trim($_SERVER['REQUEST_URI'],'/');
+setcookie('url', $webId);
+
 
 $curl = new CURL();
 
