@@ -4,6 +4,7 @@
             <aside class="column-1_4 widget widget_socials">
                 <div class="widget_inner">
                     <div class="logo_descr">
+                    <p style="text-align: left;font-size: 16px;">Introduction of <b><?php echo isset($homePages->firm_name) ? $homePages->firm_name : ""; ?></b></p>
                         <?php
                         if (!empty($about_data) && $about_data->code == 200) {
                             $aboutus = $about_data->Uaboutus;
@@ -102,7 +103,7 @@
                                 <br>
                                 <br>
                                 <img src="<?php echo API_URL ?>geturl/uploads/photo/<?php echo $testimonals[$count - 1]->photo; ?>"
-                                     width="100" height="50">
+                                     width="30" height="30">
                                 <em style="float: right">- <?php echo $testimonals[$count - 1]->name; ?></em>
                                 <br>
                                 <br>
@@ -122,9 +123,20 @@
                     <ul class="sc_list  sc_list_style_iconed">
                         <li class="sc_list_item">
                             <span class="sc_list_icon icon-home-1"> </span>
-                            <?php
-                            // echo "<pre>"; print_r($homePages);
-                            echo isset($homePages->firm_address) ? substr($homePages->firm_address, 0, 50) . '...' : ""; ?>
+                        <?php     if (!empty($addresses)) {
+                                        foreach ($addresses as $key => $address) {
+                                            $fullAddr = $address->street_address_1 . ' <br/>' . $address->street_address_2 . ' <br/>' . $address->Cities->city . ' ' . $address->States->state_name . ' ' . $address->Cities->county . ' - ' . $address->zip_code;
+                                            break;
+                                        }
+                                        echo $fullAddr;
+                                        }else{
+                        echo isset($homePages->firm_address) ? $homePages->firm_address : ""; 
+                                        }
+                                        ?>
+
+                            
+                            
+                            
                             <?php //echo ($homePages->state->state_name != '') ? $homePages->state->state_name.' ,' : ''; ?>
                             <span><?php //echo ($homePages->city->city != '') ? $homePages->city->city : ''; ?></span>
                             <span><?php echo ($homePages->zip_code != '') ? $homePages->zip_code : ''; ?></span>
@@ -309,7 +321,7 @@
     });
 
 </script>
-<?php $url = $_SERVER['REQUEST_URI'];
+<?php $url = trim($_SERVER['REQUEST_URI'],'/');
 $urlLivechat = "'//".$_SERVER['HTTP_HOST']."/cpa-portal/livechat/php/app.php?widget-init.js&url=".$url."'";
 ?>
 <script>

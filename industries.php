@@ -90,19 +90,23 @@ if (isset($bannerSetting->isedit) && $bannerSetting->isedit === 1) {
                                         <div class="sc_section" style="height:300px;">
                                             <?php if ($value->isedit == 1) { ?>
                                             <h5 class="sc_title sc_align_left"><?php echo substr(trim($value->title), 0, 15); ?></h5>
+                                            <div style="word-break: break-all;">
                                             <?php
                                             //echo substr(trim($value->page_content), 0, 250);
-                                              echo $details = str_replace("{company_name}", $homePages->firm_name, substr(trim($value->page_content), 0, 250));
+                                              echo $details = str_replace("{company_name}", $homePages->firm_name, substr(trim($value->page_content), 0, 200));
                                             ?>
+                                            </div>
                                             <a href="industriesdetails.php?slug=<?php echo $value->page_slug ?>" class="sc_button button-hover sc_button_square sc_button_style_clear sc_button_bg_link sc_button_size_mini  sc_button_iconed inherit" data-text="Learn more">Learn more</a>
                                             <?php }else{ ?>
                                             
                                              <h5 class="sc_title sc_align_left"><?php echo substr(trim($value->Industries->title), 0, 15); ?></h5>
+                                             <div style="word-break: break-all;">
                                                 <?php
-                                                echo $details = str_replace("{company_name}", $homePages->firm_name, substr(trim($value->Industries->industriecontents[$set_no-1]->contents), 0, 250));
+                                                echo $details = str_replace("{company_name}", $homePages->firm_name, substr(trim($value->Industries->industriecontents[$set_no-1]->contents), 0, 200));
                                                 ?>
                                                 <a href="industriesdetails.php?slug=<?php echo $value->page_slug ?>" class="sc_button button-hover sc_button_square sc_button_style_clear sc_button_bg_link sc_button_size_mini  sc_button_iconed inherit" data-text="Learn more">Learn more</a>    
                                             <?php } ?>
+                                             </div>
                                         </div>
                                     </div>
                                 </div>

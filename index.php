@@ -80,7 +80,10 @@ $labels = array('no_of_clients' => 'images/ic_no_of_client.png',
                                  data-end="7500" 
                                  data-endspeed="1000" 
                                  >
-                                <a href='<?php echo $banner_value->button_link; ?>' class='sc_button button-hover sc_button_square sc_button_style_red' data-text="<?php echo $banner_value->button_name; ?>"><?php echo $banner_value->button_name; ?></a> 
+                                <?php if(!empty($banner_value->button_link)){ ?>
+                                <a href='<?php echo $banner_value->button_link; ?>' class='sc_button button-hover sc_button_square sc_button_style_red' data-text="<?php echo !empty($banner_value->button_name) ?$banner_value->button_name:"Read More"; ?>"><?php echo !empty($banner_value->button_name) ?$banner_value->button_name:"Read More"; ?></a> 
+                                <?php } ?>
+                                
                             </div>
                         </li>
                     <?php
@@ -172,12 +175,14 @@ $labels = array('no_of_clients' => 'images/ic_no_of_client.png',
                             <div class="column-1_4 sc_column_item">
                                 <div class="sc_column_item_inner">
                                     <div class="sc_section">
-                                        <?php if ($service->icon != '') { ?>
-                                            <img src="<?php echo API_URL . 'geturl/uploads/icon/' . $service->icon; ?>" />
-                                        <?php } else { ?>
-                                            <span class="sc_icon style_2 <?php echo $defIcon[$i]; ?> sc_icon_shape_none sc_icon_bg_custom"></span>
-                                        <?php }
-                                        ?>
+                                        <?php if ($service->edit_status == 0 && !empty($service->service->icon)) {?>
+                                        <img src="<?php echo API_URL . 'geturl/uploads/icon/' . $service->service->icon; ?>" />
+                                        <?php }else if( ($service->edit_status ==1) &&  ($service->icon != '')){ ?>
+                                        <img src="<?php echo API_URL . 'geturl/uploads/icon/' . $service->icon; ?>" />
+                                        <?php }else{ ?>
+                                        <span class="sc_icon style_2 <?php echo $defIcon[$i]; ?> sc_icon_shape_none sc_icon_bg_custom"></span>
+                                         <?php } ?>
+                                        
                                         <h5 class="sc_title sc_align_left"><?php echo $service->name; ?></h5>
                                         <?php
                                         if ($service->edit_status == 1) {
@@ -192,7 +197,6 @@ $labels = array('no_of_clients' => 'images/ic_no_of_client.png',
                             </div>
                             <?php
                             $i++;
-
                             if ($i == 4) {
                                 break;
                             }

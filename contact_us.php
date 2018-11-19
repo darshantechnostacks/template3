@@ -1,5 +1,5 @@
 <?php require_once('header.php'); ?>
-    <div class="page_content_wrap">
+    <div class="">
         <section class="">
             <div class="container">
                 <div class="row">

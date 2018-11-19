@@ -25,8 +25,6 @@ if ($result->code == 200) {
     color: unset;
 }	
 </style>
-
-<div class="clearfix"></div>
 <div class="page_top_wrap page_top_title page_top_breadcrumbs">
     <div class="content_wrap">
         <div class="breadcrumbs">
@@ -109,7 +107,10 @@ if ($result->code == 200) {
 									</div>
 								</div>
 							<?php } }
-							} ?>
+							} else{ ?>
+							<br/>
+								<h3>No record found.</h3>
+								<?php }?>
 								
 							</div>
 						</div>

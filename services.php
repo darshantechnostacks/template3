@@ -10,22 +10,28 @@
    
    $pages = array();
    
-   if($result->code == 200)
+   if($result->code == 200 && !empty($result->Uservices))
    {
    	$pages = $result->Uservices;
    }
    
    $settings = $pages->setting;
    
-   if($settings->edit_status == 0)
+   if(isset($settings->edit_status) && $settings->edit_status == 0 && !empty($settings))
    {
       $settings_content = $settings->service->page_content;	
    	$settings_icon = $settings->service->icon;	
    }
    else
    {
-   	$settings_content = $settings->page_content;	
-   	$settings_icon = $settings->icon;
+   	$settings_content = isset($settings->page_content)?$settings->page_content:"";	
+   	$settings_icon = isset($settings->icon)?$settings->icon:"";
+   }
+   
+   if(!empty($settings_icon)){
+       $BannerImage =  API_URL . 'geturl/uploads/icon/' . $settings_icon;
+   }else{
+       $BannerImage = 'images/title-bg.jpg';
    }
    
    ?>
@@ -39,7 +45,7 @@
    width: 60px;
    }
 </style>
-<div class="page_top_wrap page_top_title page_top_breadcrumbs" style="background:url(<?php echo API_URL . 'geturl/uploads/icon/' . $settings_icon; ?>) no-repeat 59% 49%;max-height: 250px;background-size: cover;" >
+<div class="page_top_wrap page_top_title page_top_breadcrumbs" style="background:url(<?php echo $BannerImage; ?>) no-repeat 59% 49%;max-height: 250px;background-size: cover;" >
    <div class="content_wrap">
       <div class="breadcrumbs">
          <a class="breadcrumbs_item home" href="index.php">Home</a>

@@ -3,7 +3,7 @@ define('API_URL','');
 define('EMAIL','');
 define('API_TOKEN','');
 define('WEBSITE_ID','');
-
+   
 class CURL {
 
     function send_api($fields, $action) {
@@ -30,7 +30,6 @@ class CURL {
 
 $webId = trim($_SERVER['REQUEST_URI'],'/');
 setcookie('url', $webId);
-
 
 $curl = new CURL();
 
@@ -219,6 +218,15 @@ $news = array();
 if (!empty($news_data) && $news_data->code == 200) {
     $news = $news_data->Aposts;
 }
+
+
+//get addresses
+$data['websiteId'] = WEBSITE_ID;
+$branchAddresses = $curl->send_api($data, 'UbranchAddress/index');
+if (!empty($result) && $result->code == 200) {
+    $addresses = $branchAddresses->UbranchAddress;
+}
+
 /* * ***End News******** */
 
 	/*****Get Team*********/

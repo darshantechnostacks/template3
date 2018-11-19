@@ -55,11 +55,7 @@
     <div class="page_top_wrap page_top_title page_top_breadcrumbs" style="background:url(<?php echo API_URL ?>geturl/uploads/photo/<?php echo $images; ?>) no-repeat 59% 49%;max-height: 250px;background-size: cover;">
         <div class="content_wrap">
             <div class="breadcrumbs">
-                <a class="breadcrumbs_item home" href="#!">Home</a>
-                <span class="breadcrumbs_delimiter"></span>
-                <a class="breadcrumbs_item home" href="resources.html">Resources</a>
-                <span class="breadcrumbs_delimiter"></span>
-                <a class="breadcrumbs_item home" href="tax-center.html">Tax Center</a>
+                <a class="breadcrumbs_item home" href="index.php">Home</a>
                 <span class="breadcrumbs_delimiter"></span>
                 <span class="breadcrumbs_item current">Record Retention</span>
             </div>
@@ -68,10 +64,13 @@
     </div>
     <center><h4 class="page_title"><?php echo $description;?></h4></center>
         <div class="page_content_wrap margin_bottom_mini padding_bottom_mini padding_left_mini padding_right_mini padding_top_mini">
+            <ul>    
             <?php 
             foreach($recordretention  as $row){?>
-                <p class="margin_bottom_mini"><strong><?php echo $row->title;?></strong></p>
+                <li class="margin_bottom_mini"><strong><?php echo $row->title;?></strong>
                 <p class="margin_bottom_mini margin_top_none"><?php echo $row->description;?> </p>
+                </li>
            <?php }?>
+           </ul>
         </div>
 <?php require_once('footer.php'); ?> 

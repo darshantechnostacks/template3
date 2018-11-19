@@ -12,6 +12,8 @@ $tags = '';
 $page = array();
 
 $news = isset($news) ? $news : '';
+
+$cnt = 0;
 ?>
 
 <div class="page_top_wrap page_top_title page_top_breadcrumbs">
@@ -30,6 +32,7 @@ $news = isset($news) ? $news : '';
         <div class="content addblog">
             <?php
             if (!empty($news)) {
+                $cnt = count($news);
                 $i = 0;
                 foreach ($news as $key => $value) {
                     if(!in_array($value->id, $uBlogsStatusIds)){
@@ -79,7 +82,9 @@ $news = isset($news) ? $news : '';
                                         }
                                         echo $content;
                                         ?></p>
+                                      
                                     <a href="newsdeatails.php?id=<?php echo $value->id; ?>" class="sc_button button-hover sc_button_square sc_button_style_red sc_button_size_mini" data-text="More Info" title="More Info">More Info</a>
+
                                 </div>
                             </div>
                         </article>
@@ -92,11 +97,13 @@ $news = isset($news) ? $news : '';
             <?php } else { ?>
                 <h3 class="text-center">No Data Found.</h3>
             <?php } ?>
+              <?php if($cnt>2){ ?>
             <div class="sc_contact_form_item sc_contact_form_button loadmorebtndiv" style="text-align: center">
                 <div class="squareButton sc_button_size sc_button_style_global global">
                     <button type="submit" name="contact_submit" id="loadblog" class="sc_button button-hover sc_button_square sc_button_style_red sc_button_size_mini contact_form_submit" data-text="Click Here">Load More</button>
                 </div>
             </div>
+            <?php } ?>
             <div class="clearfix"></div>
 
         </div>

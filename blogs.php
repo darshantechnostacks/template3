@@ -14,6 +14,7 @@ $page = array();
 
 $blogs = isset($blogs) ? $blogs : '';
 $singleArr = array();
+$cnt = 0;
 ?>
 
 <div class="page_top_wrap page_top_title page_top_breadcrumbs">
@@ -32,6 +33,7 @@ $singleArr = array();
         <div class="content addblog">
             <?php
             if (!empty($blogs)) {
+                $cnt = count($blogs);
                 $i = 0;
                 foreach ($blogs as $key => $value) {
                     if(!in_array($value->id, $uBlogsStatusIds)){
@@ -94,12 +96,13 @@ $singleArr = array();
 
             <?php } else { ?>
                 <h3 class="text-center">No Data Found.</h3>
-            <?php } ?>
+            <?php } if($cnt>2){ ?>
             <div class="sc_contact_form_item sc_contact_form_button loadmorebtndiv" style="text-align: center">
                 <div class="squareButton sc_button_size sc_button_style_global global">
                     <button type="submit" name="contact_submit" id="loadblog" class="sc_button button-hover sc_button_square sc_button_style_red sc_button_size_mini contact_form_submit" data-text="Click Here">Load More</button>
                 </div>
             </div>
+            <?php } ?>
             <div class="clearfix"></div>
 
         </div>
