@@ -281,6 +281,12 @@ if (strpos($url, 'track_refund.php') !== false) {
         });
     });
 </script>
-
+<?php $url = trim($_SERVER['REQUEST_URI'],'/');
+$urlLivechat = "'//".$_SERVER['HTTP_HOST']."/cpa_portal/livechat/php/app.php?widget-init.js&url=".$url."'";
+?>
+<script>
+    var url = "<?php echo $url; ?>";
+    (function(d,t,u,s,e){e=d.getElementsByTagName(t)[0];s=d.createElement(t);s.src=u;s.async=1;e.parentNode.insertBefore(s,e);})(document,'script',<?= $urlLivechat ?>);
+</script>
 </body>
 </html>

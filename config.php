@@ -1,33 +1,17 @@
 <?php
-    //Local
-    define('API_URL','http://192.168.0.158/cpa-cake/');
-    define('EMAIL','test20@yopmail.com');
-    define('API_TOKEN','1943869614813663c39abfaaf2f02e8cddf4e459');
-    define('WEBSITE_ID','1be7c36b3c2561e800d9cf43cdc22ef1');
 
-    //Live
-//    define('API_URL','http://18.221.49.101/cpacake/');
-//    define('EMAIL','dhrumil1@yopmail.com');
-//    define('API_TOKEN','efe13fc665f5f82351d7db3a7202238facefbf66');
-//    define('WEBSITE_ID','d4c132469b11d98e74461b0f48c0af04');
-//
-//define('API_URL','http://18.221.49.101/cpacake/');
-//define('EMAIL','dhaval@yopmail.com');
-//define('API_TOKEN','ccb79ed3b41e6b3ac73a3420fc6a952b173a01d5');
-//define('WEBSITE_ID','931e53a63a665475929569e260a647c4');
-//
-//define('API_URL','http://18.221.49.101/cpacake/');
-//define('EMAIL','demo2@yopmail.com');
-//define('API_TOKEN','25dc8d9287e4bb46f425c0ff0a5dbf14c3cd0b59');
-//define('WEBSITE_ID','2b1c70f850e4da7cd86267195ada6177');
+define('API_URL','http://18.221.49.101/cpacake/');
+define('EMAIL','demo2@yopmail.com');
+define('API_TOKEN','25dc8d9287e4bb46f425c0ff0a5dbf14c3cd0b59');
+define('WEBSITE_ID','2b1c70f850e4da7cd86267195ada6177');
 
-    define('BANNER_URL', API_URL.'geturl/uploads/banner/');
-    define('LOGO_URL', API_URL.'geturl/uploads/logo/');
-    define('ICON_URL', API_URL.'geturl/uploads/icon/');
-    define('FEATURE_PHOTO', API_URL.'geturl/uploads/feature_photo/');
-    define('PHOTO_URL', API_URL.'geturl/uploads/photo/');
-    define('COVER_URL', API_URL.'geturl/uploads/cover/');
-    define('FILE_URL', API_URL.'geturl/uploads/file/');
+define('BANNER_URL', API_URL.'geturl/uploads/banner/');
+define('LOGO_URL', API_URL.'geturl/uploads/logo/');
+define('ICON_URL', API_URL.'geturl/uploads/icon/');
+define('FEATURE_PHOTO', API_URL.'geturl/uploads/feature_photo/');
+define('PHOTO_URL', API_URL.'geturl/uploads/photo/');
+define('COVER_URL', API_URL.'geturl/uploads/cover/');
+define('FILE_URL', API_URL.'geturl/uploads/file/');
 
 
 
@@ -40,7 +24,7 @@ class CURL {
         $headers = array(
             'Content-Type: application/json'
         );
-        $ch = curl_init();        
+        $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
@@ -48,7 +32,7 @@ class CURL {
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
         curl_setopt($ch, CURLOPT_USERPWD, "$email:$api_token");
-        $result = curl_exec($ch);       
+        $result = curl_exec($ch);
         curl_close($ch);
         $returnResult = json_decode($result);
         return $returnResult;
@@ -196,14 +180,14 @@ $testimonal_data = array();
 /*$testimonals_array['is_deleted'] = 0;
 $testimonals_array['status'] = 1;
 $testimonals_array['websiteId'] = WEBSITE_ID;*/
- $testimonalsarray = array(
+$testimonalsarray = array(
     'conditions' => ['Utestimonials.is_deleted' => 0,'Utestimonials.status' => 1, 'Utestimonials.websiteId' => WEBSITE_ID],
     'contain' => ['states', 'cities'],
     'fields' => array(),
     'select' => array(),
     'get' => 'all',
     'order' => array('Utestimonials.id' => 'desc'),
-    );
+);
 
 $testimonal_data = $curl->send_api($testimonalsarray, 'Utestimonials/indexAll');
 
@@ -239,22 +223,22 @@ if (!empty($news_data) && $news_data->code == 200) {
 //p($news);
 /* * ***End News******** */
 
-	/*****Get Team*********/
-	/*$our_team_data = array();
-	$our_team_data['umenu_id'] = 1;
-	$our_team_data['websiteId'] = WEBSITE_ID;
+/*****Get Team*********/
+/*$our_team_data = array();
+$our_team_data['umenu_id'] = 1;
+$our_team_data['websiteId'] = WEBSITE_ID;
 
-	$our_team_datas = $curl->send_api($our_team_data, 'Uteams/getAllUteams');
+$our_team_datas = $curl->send_api($our_team_data, 'Uteams/getAllUteams');
 
-	$our_teams = array();
-	if(!empty($our_team_datas))
-	{
-		if ($our_team_datas->code == 200) {
-			$our_teams = $our_team_datas->Uteams;
-		}
-	}*/
-	/*****End Team*********/
-        
+$our_teams = array();
+if(!empty($our_team_datas))
+{
+    if ($our_team_datas->code == 200) {
+        $our_teams = $our_team_datas->Uteams;
+    }
+}*/
+/*****End Team*********/
+
 function p($data) {
     echo '<pre>';
     print_r($data);
@@ -262,12 +246,12 @@ function p($data) {
 }
 
 /********** Get Calculator Category ******/
-	
+
 $request = array(
     'conditions' => ['status' => 1, 'is_deleted' => 0],
 );
 
-$calculator_data = $curl->send_api($request,'CalculatorCategory/index');	
+$calculator_data = $curl->send_api($request,'CalculatorCategory/index');
 $calculator_menu = array();
 $calculator_res = array();
 if(!empty($calculator_data))
@@ -276,17 +260,17 @@ if(!empty($calculator_data))
     {
         $calculator_menu = (array)$calculator_data->CalculatorCategory;
     }
-    
+
     foreach($calculator_menu as $cal)
     {
         if($cal->parent_id == 0){
-        $calculator_res[$cal->id]['id'] = $cal->id;
-        $calculator_res[$cal->id]['name'] = $cal->category_name;
+            $calculator_res[$cal->id]['id'] = $cal->id;
+            $calculator_res[$cal->id]['name'] = $cal->category_name;
         }
         if($cal->parent_id != 0){
             $calculator_res[$cal->parent_id]['subdata'][] = $cal;
         }
-        
+
     }
 }
 
@@ -295,7 +279,7 @@ if(!empty($calculator_data))
 function sendemails($to, $msg, $from, $subject, $sender_name) {
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= 'From: <sanjay@technostacks.com>' . "\r\n";  
+    $headers .= 'From: <sanjay@technostacks.com>' . "\r\n";
     $default_subject = 'From My Contact Form';
     $name_not_specified = 'Please type a valid name';
     $message_not_specified = 'Please type a vaild message';
@@ -320,7 +304,7 @@ function sendemails($to, $msg, $from, $subject, $sender_name) {
             $result['message'] = implode('<br>', $errors );
         }
     } else {
-    $result['message'] = implode('<br>', $errors );
+        $result['message'] = implode('<br>', $errors );
     }
     return $result;
 }
