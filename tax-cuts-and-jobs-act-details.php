@@ -63,9 +63,11 @@ $category = array();
     <div class="banner-img">
         <?php
         if (!empty($bannerImage)) {
-            echo "<img src='$bannerImage' class='img-responsive' />";
+            echo '<div class="banner-img" style="background-image: url('.$bannerImage.')">';
+            echo "</div>";
         } else {
-            echo '<img src="img/tax_cut_banner.jpeg" class="img-responsive" />';
+            echo '<div class="banner-img" style="background-image: url(img/tax_cut_banner.jpeg)">';
+            echo "</div>";
         }
         ?>
     </div>

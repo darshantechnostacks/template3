@@ -79,15 +79,16 @@ if (!empty($resultTaxcuts) && ($resultTaxcuts->code == 200) && $resultTaxcuts->T
 $category = array();
 ?>
 <div class="sub-page-banner mb3">
-    <div class="banner-img">
+
         <?php
         if (!empty($bannerImage)) {
-            echo "<img src='$bannerImage' class='img-responsive' />";
+            echo '<div class="banner-img" style="background-image: url('.$bannerImage.')">';
+            echo "</div>";
         } else {
-            echo '<img src="img/tax_cut_banner.jpeg" class="img-responsive" />';
+            echo '<div class="banner-img" style="background-image: url(img/tax_cut_banner.jpeg)">';
+            echo "</div>";
         }
         ?>
-    </div>
     <div class="page-title">
         <div class="container">
             <div class="row">
@@ -140,20 +141,21 @@ $category = array();
                     }
                 }
             }
-        }
+            foreach ($listArray as $key => $value) {
+                echo '<h3 class="font-medium mb2">' . $key . '</h3>';
+                echo '<p class="font-16 mb2 font-light text-justify">' . $categoryContent[$key] . '</p>';
 
-        foreach ($listArray as $key => $value) {
-            echo '<h3 class="font-medium mb2">' . $key . '</h3>';
-            echo '<p class="font-16 mb2 font-light text-justify">' . $categoryContent[$key] . '</p>';
-
-            foreach ($value as $val) {
-                ?>
-                <a href="tax-cuts-and-jobs-act-details.php?id=<?= $val['page_slug']; ?>">
-                    <h3 class="font-medium mb2"><?= $val['title'] ?></h3>
-                </a>
+                foreach ($value as $val) {
+                    ?>
+                    <a href="tax-cuts-and-jobs-act-details.php?id=<?= $val['page_slug']; ?>">
+                        <h3 class="font-medium mb2"><?= $val['title'] ?></h3>
+                    </a>
                     <p class="font-16 mb2 font-light text-justify"><?= $val['contents'] ?></p>
-                <?php
+                    <?php
+                }
             }
+        } else {
+            echo ' <h1>No Record Found.</h1>';
         }
         ?>
     </div>
@@ -171,15 +173,15 @@ $category = array();
                     <div class="clearfix">
                         <div class="form-group">
                             <label for="first_name" class="font-regular">Enter First Name</label>
-                            <input type="text" class="form-control" id="first_name" name="first_name" />
+                            <input type="text" class="form-control" id="first_name" name="first_name"/>
                         </div>
                         <div class="form-group">
                             <label for="last_name" class="font-regular">Enter Last Name</label>
-                            <input type="text" class="form-control" id="last_name" name="last_name" />
+                            <input type="text" class="form-control" id="last_name" name="last_name"/>
                         </div>
                         <div class="form-group">
                             <label for="subemail" class="font-regular">Enter Your Email</label>
-                            <input type="text" class="form-control" id="subemail" name="subemail" />
+                            <input type="text" class="form-control" id="subemail" name="subemail"/>
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-pink"

@@ -1634,8 +1634,26 @@ ul {
     position: relative;
 }
 
-.sub-page-banner .banner-img img {
-    min-height: 150px;
+/*.sub-page-banner .banner-img img {*/
+    /*min-height: 150px;*/
+/*}*/
+
+.sub-page-banner .banner-img {
+    min-height: 200px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.sub-page-banner .banner-img::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom : 0;
+    background-color: rgba(0,0,0,0.4);
 }
 
 .sub-page-banner .top-contact-info {
