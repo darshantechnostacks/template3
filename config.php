@@ -1,9 +1,9 @@
 <?php
 
-define('API_URL','http://18.221.49.101/cpacake/');
-define('EMAIL','demo2@yopmail.com');
-define('API_TOKEN','25dc8d9287e4bb46f425c0ff0a5dbf14c3cd0b59');
-define('WEBSITE_ID','2b1c70f850e4da7cd86267195ada6177');
+define('API_URL','http://192.168.0.158/cpa-cake/');
+define('EMAIL','test20@yopmail.com');
+define('API_TOKEN','688eb75c9534ccfdf4cbcc54471d9a21e4f06699');
+define('WEBSITE_ID','66b8f93e22a34a9424595a9cb5aafa64');
 
 define('BANNER_URL', API_URL.'geturl/uploads/banner/');
 define('LOGO_URL', API_URL.'geturl/uploads/logo/');
@@ -12,6 +12,7 @@ define('FEATURE_PHOTO', API_URL.'geturl/uploads/feature_photo/');
 define('PHOTO_URL', API_URL.'geturl/uploads/photo/');
 define('COVER_URL', API_URL.'geturl/uploads/cover/');
 define('FILE_URL', API_URL.'geturl/uploads/file/');
+define('PDF_URL', API_URL.'geturl/uploads/pdf/');
 
 
 
