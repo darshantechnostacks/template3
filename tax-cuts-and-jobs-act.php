@@ -105,6 +105,9 @@ $category = array();
         </li>
     </ul>
 </div>
+<div class="container">
+<?= $defaultContent ?>
+</div>
 
 <div class="clearfix mb4">
     <div class="container">

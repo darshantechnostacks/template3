@@ -87,7 +87,9 @@ $category = array();
         </li>
     </ul>
 </div>
-
+<div class="container">
+    <?= $defaultContent ?>
+</div>
 <div class="page_content_wrap padding_top_middle padding_bottom_middle">
     <div class="align-items-start content_wrap d-flex flex-wrap justify-spacebetween">
         <div class="container">
