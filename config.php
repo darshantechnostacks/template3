@@ -1,8 +1,17 @@
 <?php
-define('API_URL','');
-define('EMAIL','');
-define('API_TOKEN','');
-define('WEBSITE_ID','');
+define('API_URL','http://192.168.0.158/cpa-cake/');
+define('EMAIL','test20@yopmail.com');
+define('API_TOKEN','688eb75c9534ccfdf4cbcc54471d9a21e4f06699');
+define('WEBSITE_ID','66b8f93e22a34a9424595a9cb5aafa64');
+
+define('BANNER_URL', API_URL.'geturl/uploads/banner/');
+define('LOGO_URL', API_URL.'geturl/uploads/logo/');
+define('ICON_URL', API_URL.'geturl/uploads/icon/');
+define('FEATURE_PHOTO', API_URL.'geturl/uploads/feature_photo/');
+define('PHOTO_URL', API_URL.'geturl/uploads/photo/');
+define('COVER_URL', API_URL.'geturl/uploads/cover/');
+define('FILE_URL', API_URL.'geturl/uploads/file/');
+define('PDF_URL', API_URL.'geturl/uploads/pdf/');
    
 class CURL {
 
