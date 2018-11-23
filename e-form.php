@@ -4,7 +4,7 @@ require_once('header.php');
 $settingEForm = $curl->send_api(array(), 'eForm/GetSetting');
 $settingEFormResult = !empty($settingEForm->EForm) ? $settingEForm->EForm : '';
 
-$eFormBanner = !empty($settingEFormResult->banner) ? FEATURE_PHOTO . $settingEFormResult->banner : '';
+$eFormBanner = !empty($settingEFormResult->cover_image) ? FEATURE_PHOTO . $settingEFormResult->cover_image : '';
 $eFormDescription = !empty($settingEFormResult->description) ? $settingEFormResult->description : '';
 
 $request = array(
@@ -113,7 +113,9 @@ if (!empty($resultEForm)) {
         <?php
     }
 } else {
+    echo '<div class="container">';
     echo ' <h1>No Record Found.</h1>';
+    echo '</div>';
 }
 ?>
 
