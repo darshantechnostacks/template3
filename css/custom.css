@@ -794,6 +794,24 @@ a.adv-card {
     background-color: #c8d1da;
 }
 
+.adv-card-grey {
+    background-color: #f4f7fa;
+}
+
+a.adv-card {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+.adv-card .video-thumb {
+    height: 200px;
+    background-color: #c8d1da;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .adv-card-content {
     padding: 20px;
 }
