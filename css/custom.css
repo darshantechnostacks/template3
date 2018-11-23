@@ -1705,9 +1705,27 @@ h3 {
     position: relative;
 }
 
-    .sub-page-banner .banner-img img {
-        min-height: 150px;
-    }
+    /*.sub-page-banner .banner-img img {*/
+        /*min-height: 150px;*/
+    /*}*/
+
+.sub-page-banner .banner-img {
+    min-height: 200px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.sub-page-banner .banner-img::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom : 0;
+    background-color: rgba(0,0,0,0.4);
+}
 
     .sub-page-banner .page-title {
         top: 0;
@@ -2446,3 +2464,25 @@ h3 {
 }
 
 /* File list style END */
+/* Widget style */
+
+.widget {
+    box-shadow: 0 0 20px 0 hsl(0,0%,90%);
+    border-radius: 7px;
+    background-color: #ffffff;
+}
+
+.widget .widget-image img {
+    max-height: 200px;
+    width: auto;
+}
+
+.widget .widget-content {
+    background-color: #e58636;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    border-radius:0 0 7px 7px;
+}
+
+/* Widget style END */
