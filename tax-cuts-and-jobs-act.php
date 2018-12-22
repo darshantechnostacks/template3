@@ -77,6 +77,9 @@ if (!empty($resultTaxcuts) && ($resultTaxcuts->code == 200) && $resultTaxcuts->T
     $taxcutslist = array();
 }
 $category = array();
+
+
+
 ?>
 <div class="sub-page-banner mb3">
 
